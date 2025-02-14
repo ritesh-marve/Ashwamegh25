@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASWAMEGH 2025</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0; /* Remove padding to fit logo */
+            display: flex;
+            flex-direction: column; /* Stack navbar and logo */
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+
+        }
+
+        .event-logo {
+            max-width: 100%; /* Adjust size as needed */
+            height: auto;
+            position: relative;
+            align-items: center;
+        }
+        
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: center; /* Center the logo */
+            width: 100%; /* Full width */
+        }
+        .logo{
+            width: 105%; /* Make logo responsive */
+            max-width: 700px; /* Set a max width */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+
+        .nav-menu {
+            display:flex;
+            gap: 1rem; /* Reduced gap between nav items */
+            align-items: center;
+            width: 100%; /* Full width for navbar */
+            justify-content: center; /* Center the nav items */
+            padding:0px 0px; /* Reduced padding */
+            background-color:darkred; /* Dark background for the nav */
+        }
+
+        .nav-menu a {
+            color: #fff; /* White text color */
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem; /* Smaller font size */
+            padding: 0.5rem 1rem; /* Reduced padding for nav items */
+            border-radius: 5px; /* Optional: Add some rounding to the corners */
+            transition: background-color 0.3s; /* Smooth background color transition */;
+        }
+
+        .nav-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Lighten on hover */
+        }
+
+        .hero {
+            background-image: url(bg.jpg);
+            background-repeat: no-repeat; /* Prevents repetition */
+            background-size: cover; /* Makes the image cover the div */
+            background-position: center bottom; /* Centers the image */
+            position: relative;
+            overflow: hidden;
+            padding-top: 5pc;
+            margin-top: 8px; /* Add margin to avoid overlap with fixed header */
+            padding-bottom: 3pc;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tournament-title {
+            font-size: 6rem;
+            font-weight: 800;
+            color: white;
+            text-shadow: 2px 2px 0 #666;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .tournament-title span {
+            display: block;
+            font-size: 3rem;
+            color: #FF5733;
+            text-shadow: none;
+        }
+
+        .venue {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin: 3rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            color: #ccc;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #000;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .registration-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+        }
+
+        .registration-button {
+            background: #000;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            width: 45%;
+        }
+
+        /* Custom colors for registration buttons */
+        .registration-button.girls {
+            background-color: blueviolet; 
+            font-family: sans-serif;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .registration-button.boys {
+            background-color: red;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            flex: 1; /* Pushes footer down */
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0px;
+            width: 100%;
+        }
+
+
+        /*adding css for event */
+        .schedule-section {
+            background-image: url(bg2.jpg) ;
+            background-size: cover; /* Makes the image cover the div */
+            background-position: center bottom; /* Centers the image */
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            padding: 2rem 1rem;
+            margin-top: 0rem;
+            text-align: center;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            
+    
+        }
+        .schedule-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 2rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            color:red;
+            letter-spacing: 4px;
+            background: rgba(0, 0, 0, 0.6); /* Transparent background */
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow:rgba(0, 0, 0, 0.2);
+            align-items: flex-start;
+            
+            
+        }
+
+        
+        .schedule-container {
+            max-width: 500px;
+            margin:  auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .day-schedule {
+            display: flex;
+            background: rgba(0, 0, 0, 0.6); /* Transparent background */
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow:rgba(0, 0, 0, 0.2);
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .event-date {
+            background: linear-gradient(135deg, #FF5733, #FFC300); /* Gradient for date box */
+            color: #fff;
+            padding: 0.8rem;
+            border-radius: 10px;
+            text-align: center;
+            width: 60px;
+    
+        }
+        
+        .event-date h3 {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        
+        .event-date p {
+            font-size: 0.8rem;
+            margin: 0;
+            font-weight: bold;
+        }
+        
+        .day-details {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .event-item {
+            background: rgba(255, 255, 255, 0.1); /* Subtle transparency for event items */
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            text-align: left;
+            color: #fff;
+            transition: transform 0.2s;
+        }
+        
+        .event-item h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+            font-weight: bold;
+            color: #00bfff; /* Highlighted event title */
+        }
+        
+        .event-item p {
+            font-size: 0.9rem;
+            color: #ddd;
+        }
+        
+        .event-item:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.2); /* Highlight effect */
+        }
+
+        .contact-bg{
+            background:url("c3.jpg") no-repeat;
+            background-size: cover;
+
+        }
+         
+        /*contact*/
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Stylish Contacts Title */
+        .contacts-title {
+            font-size: 25px;
+            font-style: italic;
+            font-weight: bold;
+            color: maroon;
+            position: relative;
+            display: block; /* Ensures it takes full width */
+            text-align: center; /* Centers the text */
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            top:0;
+        }
+        
+
+        .contacts-title::after {
+            content: "";
+            width: 100px; /* Fixed width for better appearance */
+            height: 4px;
+            background: linear-gradient(90deg, #007BFF, #00C6F8);
+            position: absolute;
+            left: 50%;
+            bottom: -5px; /* Moves the underline slightly below */
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .contacts-container {
+            
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            gap: 20px;
+            width: 90%;
+            margin: auto;
+            padding-top: 20px;
+            text-align: center;
+        }
+        
+        /* Contact Card */
+        .contact-card {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .contact-card h5,p{
+            color:#fff
+        }
+        
+        /* Square Contact Photo */
+        .contact-photo {
+            width: 100px; /* Thumbnail size */
+            height: 150px;
+            border-left: 4px solid transparent;
+            border-bottom: 5px solid transparent;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: block;
+            margin: 0 auto 10px;
+            object-fit: cover; /* Ensures images fit well */
+        }
+
+
+
+        .sports-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .sports-box {
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 48%;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .sports-box h3 {
+            text-align: center;
+            margin-bottom: 10px;
+            color:white;
+        }
+        .sports-box ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sports-box li {
+            color: #ddd;
+            margin: 5px 0;
+            font-size: 13px;
+        }
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        footer p {
+            margin: 5px 0;
+        }
+        
+        footer strong {
+            color: #f8c102; /* Highlighting name */
+        }
+        
+
+/* Marquee Styling */
+.marquee {
+    font-size: 15px;
+    font-weight: lighter;
+    color: #fff; /* White text */
+    background: #444; /* Dark grey background */
+    width: 100%;
+    
+}
+
+
+
+    </style>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="icon1.png">
+
+</head>
+<body>
+    <div>
+        <header class="header">
+            <div class="logo-container">
+                <img src="hvpm.png" alt="HVPM COET Logo" class="logo"> <!-- Only one logo now -->
+            </div>
+            <nav class="nav-menu">
+                <a href="#home">Home</a>
+                <a href="#schedule">Schedule</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+    </div>
+
+    <div class="hero" id="home">
+        <div class="content">
+            <img src="aslogo.png" alt="Ashwamegh Logo" class="event-logo">
+
+            <p class="venue display-7">HVPM COET, Amravati | Feb 2025</p>
+
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Sports</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="day-counter"></div>
+                    <div class="stat-label">Days Remaining</div>
+                </div>
+            </div>
+
+            <div class="registration-buttons">
+                <a href="boys.html" class="registration-button boys">Registration for Boys</a>
+                <a href="girls.html" class="registration-button girls">Registration for Girls</a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="schedule-section" id="schedule">
+        <h2 class="schedule-title">📢 Schedules</h2>
+        <div class="schedule-container">
+            <!-- Day 1 -->
+            <div class="day-schedule">
+                <div class="event-date">
+                    <h3>17</h3>
+                    <p>Feb</p>
+                </div>
+                <div class="day-details">
+                    <div class="event-item">
+                        <h4>Grand Poster Launching</h4>
+                        <p>12 PM</p>
+                    </div>
+                    <div class="event-item">
+                        <h4>Auditions</h4>
+                        <p>2 PM onwards</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Day 2 -->
+            <div class="day-schedule">
+                <div class="event-date">
+                    <h3>21</h3>
+                    <p>Feb</p>
+                </div>
+                <div class="day-details">
+                    <div class="event-item">
+                        <h4>Ashwamegh Inauguration (Flash Mob)</h4>
+                        <p>10 AM - 11:30 AM</p>
+                    </div>
+                    <div class="event-item">
+                        <h4>Male Staff Cricket</h4>
+                        <p>Till 1 PM</p>
+                    </div>
+                    <div class="event-item">
+                        <h4>Chess + Carrom</h4>
+                        <p>1 PM - 3 PM</p>
+                    </div>
+                    <div class="event-item">
+                        <h4>Kho-Kho (Girls) + Cricket (Boys)</h4>
+                        <p>3 PM - 6 PM</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Day 3 -->
+            <div class="day-schedule">
+                <div class="event-date">
+                    <h3>22</h3>
+                    <p>Feb</p>
+                </div>
+                <div class="day-details">
+                    <div class="event-item">
+                        <h4>Cricket (Boys)</h4>
+                        <p>8 AM - 12:30 PM</p>
+                    </div>
+                    <div class="event-item">
+                        <h4>Badminton + OSINT (Mystery Game)</h4>
+                        <p>1 PM - 4 PM</p>
+                    </div>
+                    <div class="event-item">
+                        <h4>Cricket (Boys) + Lagori (Girls)</h4>
+                        <p>4 PM - 6 PM</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Day 4 -->
+            <div class="day-schedule">
+                <div class="event-date">
+                    <h3>23</h3>
+                    <p>Feb</p>
+                </div>
+                <div class="day-details">
+                    <div class="event-item">
+                        <h4>Athletics (100m, 200m, Relay Race, Shot Put, Long Jump)</h4>
+                        <p>8 AM - 12 PM</p>
+                    </div>
+                    <div class="event-item">
+                        <h4>E-Sports (Free Fire, BGMI, Valorant)</h4>
+                        <p>12:30 PM - 4 PM</p>
+                    </div>
+                    <div class="event-item">
+                        <h4>Tug of War</h4>
+                        <p>4 PM - 6 PM</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Day 5 -->
+            <div class="day-schedule">
+                <div class="event-date">
+                    <h3>24</h3>
+                    <p>Feb</p>
+                </div>
+                <div class="day-details">
+                    <div class="event-item">
+                        <h4>Box Cricket (Girls + Female Staff)</h4>
+                        <p>8 AM - 12 PM</p>
+                    </div>
+                    <div class="event-item">
+                        <h4>Dodge Ball (Girls)</h4>
+                        <p>12 PM - 2 PM</p>
+                    </div>
+                    <div class="event-item">
+                        <h4>Volleyball</h4>
+                        <p>8 AM - 2 PM</p>
+                    </div>
+                    <div class="event-item">
+                        <h4>Cricket (Finals)</h4>
+                        <p>2 PM onwards</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Day 6 -->
+            <div class="day-schedule">
+                <div class="event-date">
+                    <h3>25</h3>
+                    <p>Feb</p>
+                </div>
+                <div class="day-details">
+                    <div class="event-item">
+                        <h4>Football</h4>
+                        <p>8 AM - 12 PM</p>
+                    </div>
+                    <div class="event-item">
+                        <h4>Traditional Day</h4>
+                        <p>2 PM onwards</p>
+                    </div>
+                </div>
+            </div>
+    
+           
+        </div>
+    </div>
+    
+
+        </div>
+    </div>
+    
+    
+
+    <!-- Marquee for Queries -->
+    <marquee class="marquee" behavior="scroll" direction="left" id="contact">
+    📢 Reach out for any queries! 📞
+     </marquee>
+
+     <div class="contact-bg">
+     <h2 class="contacts-title">Contacts</h2>
+
+     <div class="contacts-container">
+         <!-- Left Column - Teacher Coordinators -->
+         <div class="contact-card">
+             <img src="mohitwar.jpg" alt="Teacher Coordinator" class="contact-photo">
+             <h5>Prof. S.V. Mohitwar</h5>
+             <p>Head Coordinator</p>
+             <p>📞 +91 98765 43210</p>
+         </div>
+     
+         <div class="contact-card">
+             <img src="sir.jpg" alt="Teacher Coordinator" class="contact-photo">
+             <h5>Prof. R. Verma</h5>
+             <p>Sports Faculty</p>
+             <p>📞 +91 87654 32109</p>
+         </div>
+     
+         <!-- Right Column - Male & Female Sports Secretaries -->
+         <div class="contact-card">
+             <img src="himashu.jpg" alt="Male Sports Secretary" class="contact-photo">
+             <h5>Mr. Himanshu Punde</h5>
+             <p>Male Sports Secretary</p>
+             <p>📞 +91 76543 21098</p>
+         </div>
+     
+         <div class="contact-card">
+             <img src="poonam.jpg" alt="Female Sports Secretary" class="contact-photo">
+             <h5>Ms. Poonam Khandar </h5>
+             <p>Female Sports Secretary</p>
+             <p>📞 +91 65432 10987</p>
+         </div>
+     </div>
+     
+
+
+
+
+    <div class="container">
+        <h4 class="contacts-title">Co-ordinators</h4>
+    
+        <!-- Boys' and Girls' Sports Coordinators -->
+        <div class="sports-container">
+            <!-- Boys' Sports -->
+            <div class="sports-box">
+                <h3>🏆 Boys' Sports Coordinators</h3>
+                <ul>
+                    <li>🏏 <strong>Cricket:</strong> Mr. Shripad Boral - 📞 <a href="tel:+919730998764">+91 9730998764</a></li>
+                    <li>🏐 <strong>Volleyball:</strong> Mr. Shreyash Nimke - 📞 <a href="tel:+91823701439">+91 823701439</a></li>
+                    <li>🏸 <strong>Badminton:</strong> Mr. Ramakant Choudhary - 📞 <a href="tel:+91792124010">+91 792124010</a></li>
+                    <li>♟️ <strong>Chess:</strong> Mr. Nishant Kadu - 📞 <a href="tel:+917020397077">+91 7020397077</a></li>
+                    <li>🏃‍♂️ <strong>Athletics:</strong> Mr. Rushikesh Tupkari - 📞 <a href="tel:+919359670628">+91 9359670628</a></li>
+                    <li>🎮 <strong>E-sports (FreeFire):</strong> Mr. Mohammed Zaid - 📞 <a href="tel:+918793686139">+91 8793686139</a></li>
+                    <li>🎮 <strong>E-sports (BGMI):</strong> Mr. Harish Bundele - 📞 <a href="tel:+919860856779">+91 9860856779</a></li>
+                    <li>🎮 <strong>E-sports (Valorant):</strong> Mr. Darshan Kale - 📞 <a href="tel:+918856871581">+91 8856871581</a></li>
+                    <li>🎯 <strong>Carrom:</strong> Mr. Lakhan Pawar - 📞 <a href="tel:+918080329404">+91 8080329404</a></li>
+                    <li>⚽ <strong>Football:</strong> Mr. Tanshu Devdi - 📞 <a href="tel:+918855053816">+91 8855053816</a></li>
+                </ul>
+            </div>
+            
+            <!-- Girls' Sports -->
+            <div class="sports-box">
+                <h3>🏆 Girls' Sports Coordinators</h3>
+                <ul>
+                    <li>🏏 <strong>Box Cricket:</strong> Ms. Gauri Jane - 📞 <a href="tel:+917507646471">+91 7507646471</a></li>
+                    <li>🏸 <strong>Badminton:</strong> Mr. Ramakant Choudhary - 📞 <a href="tel:+91792124010">+91 792124010</a></li>
+                    <li>♟️ <strong>Chess:</strong> Ms. Tanvi Jivtode - 📞 <a href="tel:+917218504797">+91 7218504797</a></li>
+                    <li>🪢 <strong>Tug of War:</strong> Ms. Sakshi Ramaghre - 📞 <a href="tel:+919373328084">+91 9373328084</a></li>
+                    <li>🏃‍♀️ <strong>Athletics:</strong> Ms. Suhani Zarkhande - 📞 <a href="tel:+918999704372">+91 8999704372</a></li>
+                    <li>🏐 <strong>Dodge Ball:</strong> Ms. Saloni Gade - 📞 <a href="tel:+917666248959">+91 7666248959</a></li>
+                    <li>🎯 <strong>Carrom:</strong> Mr. Lakhan Pawar - 📞 <a href="tel:+918080329404">+91 8080329404</a></li>
+                    <li>🏏 <strong>Lagori:</strong> Ms. Priyanka Ingole - 📞 <a href="tel:+918668922346">+91 8668922346</a></li>
+                    <li>🏃‍♀️ <strong>Kho-Kho:</strong> Ms. Prajakta Sapat - 📞 <a href="tel:+918788606877">+91 8788606877</a></li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    
+    </div>
+    
+     </div>
+    
+    </div>
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Ashwaegh | All Rights Reserved</p>
+        <p>Designed & Developed by <strong>Ritesh Gaurinath Marve(CSE,3rd year</strong>
+        assisted by Dikshant Athawale(CSE,3rd year)</p>
+    </footer>
+    
+
+    <script>
+        // Function to calculate the remaining days until the event
+        function updateDayCounter() {
+            const eventDate = new Date("February 21, 2025"); // Change to your event date
+            const currentDate = new Date();
+            const remainingTime = eventDate - currentDate;
+
+            // If the event date is in the future, calculate the remaining days
+            if (remainingTime > 0) {
+                const remainingDays = Math.ceil(remainingTime / (1000 * 60 * 60 * 24)); // Convert to days
+                document.getElementById("day-counter").textContent = remainingDays;
+            } else {
+                document.getElementById("day-counter").textContent = "Event Started!";
+            }
+        }
+
+        // Call the function once on page load
+        updateDayCounter();
+
+        // Optionally, update every hour to reflect real-time countdown
+        setInterval(updateDayCounter, 3600000); // Updates every hour
+    </script>
+    <!-- Bootstrap JS (Optional, for interactive components like navbar) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
